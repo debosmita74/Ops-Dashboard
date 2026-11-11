@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InterviewSurge Ops Control Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div id="backdrop" data-action="sidebar" data-mode="close"></div>
+
+  <aside id="sidebar" aria-label="Primary">
+    <div class="sidebar-main">
+      <div class="brand">
+        <img class="logo" src="assets/logo.png" alt="interviewSurge">
+        <span class="brand-actions">
+          <button class="sbtn" id="pin-button" type="button" data-action="sidebar" data-mode="pin"
+                  title="Pin sidebar" aria-label="Pin sidebar">
+            <span data-icon="pin" class="icon-slot"></span>
+          </button>
+          <button class="sbtn" type="button" data-action="sidebar" data-mode="close"
+                  title="Collapse sidebar" aria-label="Collapse sidebar">
+            <span data-icon="left" class="icon-slot"></span>
+          </button>
+        </span>
+      </div>
+
+      <div class="wsrow"><span>Workspaces</span><span class="mode" id="sidebar-mode">Pinned</span></div>
+
+      <nav>
+        <a href="#overview" id="nav-overview">
+          <span class="lk"><span data-icon="grid" class="icon-slot"></span>Overview</span>
+        </a>
+        <a href="#queues" id="nav-queues">
+          <span class="lk"><span data-icon="users" class="icon-slot"></span>Client Queues</span>
+          <span class="ct" id="nav-pending-count">0</span>
+        </a>
+      </nav>
+
+      <div id="client-panel"></div>
+    </div>
+
+    <div class="me">
+      <div class="av"><span data-icon="user" class="icon-slot"></span></div>
+      <div class="me-text">
+        <div class="me-name">Operations</div>
+        <div class="me-role">Dispatcher</div>
+      </div>
+      <span class="sbtn" title="Log out"><span data-icon="out" class="icon-slot"></span></span>
+    </div>
+  </aside>
+
+  <div class="shell" id="shell">
+    <main id="app"></main>
+  </div>
+
+  <div id="toasts" aria-live="polite"></div>
+</body>
+</html>
